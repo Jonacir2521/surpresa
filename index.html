@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para você, Minha Gata 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background: url('https://images.unsplash.com/photo-1529257414771-1960a42db5a6?auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.65);
+      min-height: 100dvh;
+      padding: 60px 20px 100px;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 1;
+    }
+
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100dvh;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      background: rgba(255, 192, 203, 0.7);
+      border-radius: 50%;
+      animation-name: floatUp;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100dvh);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10dvh) translateX(20px);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeFloatIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5em;
+      color: #ffb6c1;
+      margin-bottom: 15px;
+      text-shadow: 0 0 8px #ff69b4, 0 0 20px #ff1493;
+      animation: glow 3s ease-in-out infinite alternate, fadeFloatIn 1.8s ease forwards;
+      opacity: 0;
+      animation-delay: 0.2s;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ff69b4, 0 0 30px #ff1493;
+      }
+      to {
+        text-shadow: 0 0 20px #ff1493, 0 0 50px #ff69b4;
+      }
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: 1.6em;
+      color: #ffb6c1;
+      animation: fadeFloatIn 1.8s ease forwards;
+      opacity: 0;
+      animation-delay: 0.4s;
+      margin-bottom: 40px;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      background: rgba(255 192 203 / 0.15);
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255, 192, 203, 0.3);
+      border-left: 6px solid #ff69b4;
+      font-style: italic;
+      animation: fadeFloatIn 1.8s ease forwards;
+      opacity: 0;
+    }
+
+    p:nth-of-type(1) { animation-delay: 0.6s; }
+    p:nth-of-type(2) { animation-delay: 0.8s; }
+    p:nth-of-type(3) { animation-delay: 1.0s; }
+    p:nth-of-type(4) { animation-delay: 1.2s; }
+    p:nth-of-type(5) { animation-delay: 1.4s; }
+    p:nth-of-type(6) { animation-delay: 1.6s; }
+
+    .assinatura {
+      font-size: 1.3em;
+      margin-top: 40px;
+      color: #f8f8f8cc;
+      animation: fadeFloatIn 1.8s ease forwards;
+      animation-delay: 1.8s;
+      opacity: 0;
+    }
+
+    .music-link {
+      margin-top: 30px;
+      animation: fadeFloatIn 1.8s ease forwards;
+      animation-delay: 2s;
+      opacity: 0;
+    }
+
+    .music-link a {
+      background: linear-gradient(45deg, #ffc0cb, #ff69b4);
+      color: #fff;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1em;
+      box-shadow: 0 5px 15px rgba(255, 105, 180, 0.6);
+      transition: background 0.4s ease, transform 0.3s ease;
+      display: inline-block;
+    }
+
+    .music-link a:hover {
+      background: linear-gradient(45deg, #ff69b4, #ff1493);
+      transform: scale(1.05);
+    }
+
+    .surprise-btn {
+      all: unset;
+      display: inline-block;
+      background-color: #ff69b4;
+      border-radius: 50px;
+      padding: 14px 28px;
+      font-size: 1.2em;
+      font-weight: 700;
+      color: #fff;
+      cursor: pointer;
+      margin: 40px auto 0;
+      box-shadow: 0 4px 12px rgba(255, 105, 180, 0.7);
+      animation: pulse-btn 2s infinite;
+    }
+
+    @keyframes pulse-btn {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    footer {
+      position: fixed;
+      bottom: 15px;
+      width: 100%;
+      text-align: center;
+      font-size: 1.8em;
+      color: #ff69b4;
+      animation: pulse 2s infinite;
+      user-select: none;
+      z-index: 10;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+      }
+    }
+
+    .heart {
+      position: fixed;
+      width: 24px;
+      height: 24px;
+      background-color: #ff69b4;
+      transform: rotate(-45deg);
+      animation: riseUp 1.5s ease forwards;
+      z-index: 9999;
+      pointer-events: none;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background-color: #ff69b4;
+      border-radius: 50%;
+    }
+
+    .heart::before { top: -12px; }
+    .heart::after { left: 12px; }
+
+    @keyframes riseUp {
+      0% { opacity: 1; transform: translateY(0) scale(1); }
+      100% { opacity: 0; transform: translateY(-120px) scale(1.5); }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.6em; }
+      h2 { font-size: 1.3em; }
+      p { font-size: 1em; padding: 12px 16px; }
+      .music-link a, .surprise-btn { padding: 10px 20px; font-size: 0.95em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>Para você, Minha Gata 💕</h1>
+    <h2>Feliz Dia dos Namorados!</h2>
+
+    <p>Dani, desde que você chegou, as cores ficaram mais vivas, os dias mais leves, o meu coração mais cheio e as minhas tardes de domingo nunca mais foram as mesmas. 💌<br><br>Eu não sei explicar o porquê... só sei que te amar se tornou minha parte favorita da vida.</p>
+    <p>“O quanto eu gosto de você...</p>
+    <p>O quanto eu gosto de você pode parecer contraditório, às vezes parece que não ligo, às vezes ligo até demais, mas é só meu jeito bagunçado de te amar.<br>Não adianta tentar entender, nem eu às vezes consigo, quem sente fundo, às vezes, se esconde raso.</p>
+    <p>Carrego o amor no bolso, junto com meus sonhos e meus medos, e às vezes luto contra pensamentos que nem eu entendo, em silêncio, no caminho de casa, olhando o céu no retrovisor.</p>
+    <p>Mas aí você aparece.<br>Com uma mensagem simples.<br>Com uma risada boba.<br>Com uma presença que acalma.<br>Com um olhar, que me faz pensar, de todos os lugares do mundo, eu estou onde realmente eu queria estar.</p>
+    <p>E então o mundo volta a ter cor. Domingo para de doer, não me sinto mais sozinho, eu tenho você.<br><br>Ontem, por coincidência, parecia domingo, mas um domingo bom, daqueles com café morno e abraço lento.<br>Anteontem também. Toda semana virou domingo com você..” 🎶</p>
+
+    <button class="surprise-btn" onclick="mostrarSurpresa()">Mensagem Surpresa 🎁</button>
+
+    <div class="assinatura">
+      Com amor e carinho,<br>
+      Jonas 💖
+    </div>
+
+    <div class="music-link">
+      <a href="https://www.youtube.com/watch?v=LjhCEhWiKXk&ab_channel=BrunoMars" target="_blank" rel="noopener noreferrer">
+        ▶ Simples mas me lembra você 💖
+      </a>
+    </div>
+  </div>
+
+  <footer>❤️</footer>
+  <div class="particles" id="particles-container"></div>
+
+  <script>
+    function mostrarSurpresa() {
+      alert('Só queria te lembrar que você é incrível e faz meus dias melhores. Te amo muito, minha gata! 😘');
+    }
+
+    document.body.addEventListener('click', function(e) {
+      if (e.target.classList.contains('surprise-btn')) return;
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = e.pageX - 12 + 'px';
+      heart.style.top = e.pageY - 12 + 'px';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 1500);
+    });
+
+    const particlesContainer = document.getElementById('particles-container');
+
+    function createParticle() {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      const size = Math.random() * 10 + 8;
+      particle.style.width = size + 'px';
+      particle.style.height = size + 'px';
+      particle.style.left = Math.random() * window.innerWidth + 'px';
+      particle.style.bottom = '-20px';
+      particle.style.animationDuration = (8 + Math.random() * 5) + 's';
+      particle.style.opacity = 0.3 + Math.random() * 0.5;
+      particlesContainer.appendChild(particle);
+      setTimeout(() => particle.remove(), 13000);
+    }
+
+    setInterval(createParticle, window.innerWidth < 600 ? 700 : 400);
+  </script>
+</body>
+</html>
